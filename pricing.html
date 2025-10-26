@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TechNova Solutions - Pricing</title>
+  <meta name="description" content="Affordable and professional website development, SEO, and specialized portfolio packages by TechNova Solutions.">
+  <meta name="keywords" content="website development, SEO services, WordPress, portfolio, TechNova Solutions, pricing">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Pricing Section */
+    .pricing {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      overflow: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .section-title.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title .subtitle {
+      color: #667eea;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      color: #2d3748;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #4a5568;
+      font-size: 14px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Animation Classes */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide-up {
+      opacity: 0;
+      transform: translateY(100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .animate {
+      opacity: 1 !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* Pricing Cards */
+    .pricing-item {
+      background: white;
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    .pricing-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .pricing-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+      border-color: #667eea;
+    }
+
+    .pricing-item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .pricing-item.featured {
+      border: 2px solid #667eea;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .pricing-item.featured h3,
+    .pricing-item.featured h4,
+    .pricing-item.featured .description {
+      color: white;
+    }
+
+    .pricing-item.featured .cta-btn {
+      background: white;
+      color: #667eea;
+    }
+
+    .pricing-item.featured .cta-btn:hover {
+      background: #f7fafc;
+      transform: translateY(-2px);
+    }
+
+    .popular {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #f6ad55;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .pricing-item h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #2d3748;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pricing-item h3 i {
+      font-size: 24px;
+      color: #667eea;
+    }
+
+    .pricing-item.featured h3 i {
+      color: white;
+    }
+
+    .description {
+      color: #718096;
+      font-size: 13px;
+      margin-bottom: 20px;
+      min-height: 50px;
+    }
+
+    .pricing-item h4 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 20px;
+    }
+
+    .pricing-item h4 sup {
+      font-size: 18px;
+      top: -15px;
+    }
+
+    .pricing-item h4 span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #718096;
+    }
+
+    .pricing-item.featured h4,
+    .pricing-item.featured h4 span {
+      color: white;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    .pricing-item ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0 0;
+    }
+
+    .pricing-item ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .pricing-item.featured ul li {
+      border-bottom-color: rgba(255,255,255,0.2);
+    }
+
+    .pricing-item ul li i.feature-icon {
+      font-size: 16px;
+      margin-left: 8px;
+      opacity: 0.6;
+    }
+
+    .pricing-item ul li.na {
+      opacity: 0.5;
+    }
+
+    .pricing-item ul li i.bi-check-circle-fill {
+      color: #48bb78;
+      font-size: 14px;
+      margin-right: 8px;
+    }
+
+    .pricing-item.featured ul li i.bi-check-circle-fill {
+      color: #9ae6b4;
+    }
+
+    .pricing-item ul li i.bi-x-circle-fill {
+      color: #f56565;
+      font-size: 14px;
+      margin-right: 8px;
+    }
+
+    /* SEO Maintenance Section */
+    .seo-maintenance {
+      margin-top: 60px;
+      padding: 40px 0;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    .seo-maintenance h3 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 12px;
+    }
+
+    .seo-maintenance .subtitle-text {
+      text-align: center;
+      color: #718096;
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+
+    .seo-card {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .seo-card:hover {
+      transform: translateX(8px);
+      border-color: #667eea;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    }
+
+    .seo-card h5 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .seo-card h5 i {
+      margin-right: 8px;
+      color: #667eea;
+      font-size: 20px;
+    }
+
+    .seo-card p {
+      color: #4a5568;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .seo-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #667eea;
+    }
+
+    .seo-price span {
+      font-size: 12px;
+      color: #718096;
+      font-weight: 500;
+    }
+
+    .seo-card ul li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .seo-card ul li i.feature-icon {
+      font-size: 16px;
+      color: #667eea;
+      opacity: 0.7;
+    }
+
+    /* Add-ons Section */
+    .addons-section {
+      margin-top: 40px;
+    }
+
+    .addons-section h3 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 30px;
+    }
+
+    .addon-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 2px solid #e2e8f0;
+    }
+
+    .addon-card:hover {
+      border-color: #667eea;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    }
+
+    .addon-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .addon-card h5 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 8px;
+    }
+
+    .addon-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #667eea;
+      margin-top: 12px;
+    }
+
+    /* Contact Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 20px;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-header h5 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .modal-body {
+      padding: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #2d3748;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    .submit-btn:disabled {
+      background: #a0aec0;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
+    .alert {
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .pricing-item h4 {
+        font-size: 28px;
+      }
+
+      .pricing-item {
+        padding: 20px 15px;
+      }
+
+      .slide-left, .slide-right, .slide-up {
+        transform: translateY(50px) scale(0.9);
+      }
+
+      .modal-content {
+        width: 95%;
+        margin: 10% auto;
+      }
+
+      .pricing-item,
+      .seo-card,
+      .addon-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="pricing-page">
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl position-relative">
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+       <img src="./techSolution-removebg-preview.png" alt="TechNova Solutions Logo">
+          <h1 class="sitename"></h1>
+        </a>
+        <div class="d-flex align-items-center">
+          <div class="social-links">
+            <a href="#" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-wrap">
+        <div class="container d-flex justify-content-center position-relative">
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="service-details.html">Services</a></li>
+              <li><a href="pricing.html" class="active">Pricing</a></li>
+              <li><a href="pricing.html">Project</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle navigation"></i>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/bg/bg-2.webp);">
+      <div class="container position-relative">
+        <h1>Pricing</h1>
+        <p>Explore our affordable website development, SEO, and specialized portfolio packages tailored for your business needs.</p>
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Pricing</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+      <div class="container section-title" data-animate="title">
+        <span class="subtitle">Pricing</span>
+        <h2>Website Development & SEO Packages</h2>
+        <p>Affordable and professional website development services in India. Take your business online.</p>
+      </div>
+
+      <div class="container">
+        <!-- Main Website Development Packages -->
+        <div class="row gy-4">
+          <div class="col-lg-4" data-animate="left">
+            <div class="pricing-item slide-left">
+              <h3><i class="bi bi-briefcase" aria-hidden="true"></i> Basic Business</h3>
+              <p class="description">Perfect for small businesses and startups. 4-5 pages with mobile responsive design and basic SEO setup.</p>
+              <h4><sup>₹</sup>8,000<span> / one time</span></h4>
+              <button class="cta-btn" onclick="openModal('Basic Business', '₹8,000')" aria-label="Get started with Basic Business package">Get Started</button>
+              <p class="text-center small">Setup within 7 days</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 4-5 Static Pages</span><i class="bi bi-file-earmark-text feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Mobile Responsive</span><i class="bi bi-phone feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Basic SEO Setup</span><i class="bi bi-search feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Contact Form</span><i class="bi bi-envelope feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Social Media Links</span><i class="bi bi-share feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Admin Panel</span><i class="bi bi-shield-lock feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Database</span><i class="bi bi-database feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-animate="up">
+            <div class="pricing-item featured slide-up">
+              <p class="popular">Most Popular</p>
+              <h3><i class="bi bi-lightning-charge" aria-hidden="true"></i> Dynamic + SEO</h3>
+              <p class="description">Complete solution with admin panel, blog system, and 3 months SEO growth plan included.</p>
+              <h4><sup>₹</sup>22,000<span> / package</span></h4>
+              <button class="cta-btn" onclick="openModal('Dynamic + SEO', '₹22,000')" aria-label="Get started with Dynamic + SEO package">Get Started</button>
+              <p class="text-center small">Best value for money</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Admin Panel</span><i class="bi bi-gear feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Blog & Database</span><i class="bi bi-journal-text feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Modern Backend</span><i class="bi bi-server feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 3 Months SEO</span><i class="bi bi-graph-up feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Google Business</span><i class="bi bi-google feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Monthly Blogs</span><i class="bi bi-pencil-square feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Free Hosting</span><i class="bi bi-cloud-check feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-animate="right">
+            <div class="pricing-item slide-right">
+              <h3><i class="bi bi-cart4" aria-hidden="true"></i> E-Commerce</h3>
+              <p class="description">Full-featured online store with product management, cart, payment gateway, and SEO optimization.</p>
+              <h4><sup>₹</sup>42,000<span> / one time</span></h4>
+              <button class="cta-btn" onclick="openModal('E-Commerce', '₹42,000')" aria-label="Get started with E-Commerce package">Get Started</button>
+              <p class="text-center small">Ready in 15-20 days</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Product Management</span><i class="bi bi-box-seam feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Shopping Cart</span><i class="bi bi-cart3 feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Payment Gateway</span><i class="bi bi-credit-card feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Admin Dashboard</span><i class="bi bi-speedometer2 feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Order Management</span><i class="bi bi-clipboard-check feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> SEO Optimized</span><i class="bi bi-trophy feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Notifications</span><i class="bi bi-bell feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Website Development Packages -->
+        <div class="row gy-4 mt-4">
+          <div class="col-lg-3 col-md-6" data-animate="left">
+            <div class="pricing-item slide-left">
+              <h3><i class="bi bi-wordpress" aria-hidden="true"></i> WordPress Website</h3>
+              <p class="description">Custom WordPress site with premium themes and plugins for easy content management.</p>
+              <h4><sup>₹</sup>15,000<span> / one time</span></h4>
+              <button class="cta-btn" onclick="openModal('WordPress Website', '₹15,000')" aria-label="Get started with WordPress Website package">Get Started</button>
+              <p class="text-center small">Setup within 10 days</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Custom Theme</span><i class="bi bi-brush feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Mobile Responsive</span><i class="bi bi-phone feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Basic SEO Setup</span><i class="bi bi-search feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Contact Form</span><i class="bi bi-envelope feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Plugins Setup</span><i class="bi bi-plug feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Advanced Features</span><i class="bi bi-gear feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> E-Commerce</span><i class="bi bi-cart feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-animate="left">
+            <div class="pricing-item slide-left">
+              <h3><i class="bi bi-heart-pulse" aria-hidden="true"></i> Doctor Portfolio</h3>
+              <p class="description">Professional portfolio for doctors with appointment booking and patient testimonials.</p>
+              <h4><sup>₹</sup>12,000<span> / one time</span></h4>
+              <button class="cta-btn" onclick="openModal('Doctor Portfolio', '₹12,000')" aria-label="Get started with Doctor Portfolio package">Get Started</button>
+              <p class="text-center small">Setup within 7-10 days</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 5-6 Pages</span><i class="bi bi-file-earmark-text feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Appointment System</span><i class="bi bi-calendar-check feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Testimonials</span><i class="bi bi-quote feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Mobile Responsive</span><i class="bi bi-phone feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Basic SEO</span><i class="bi bi-search feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Admin Panel</span><i class="bi bi-shield-lock feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Database</span><i class="bi bi-database feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-animate="right">
+            <div class="pricing-item slide-right">
+              <h3><i class="bi bi-scale" aria-hidden="true"></i> Lawyer Portfolio</h3>
+              <p class="description">Professional portfolio for lawyers with case studies and consultation booking.</p>
+              <h4><sup>₹</sup>12,000<span> / one time</span></h4>
+              <button class="cta-btn" onclick="openModal('Lawyer Portfolio', '₹12,000')" aria-label="Get started with Lawyer Portfolio package">Get Started</button>
+              <p class="text-center small">Setup within 7-10 days</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 5-6 Pages</span><i class="bi bi-file-earmark-text feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Consultation Form</span><i class="bi bi-calendar-check feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Case Studies</span><i class="bi bi-briefcase feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Mobile Responsive</span><i class="bi bi-phone feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Basic SEO</span><i class="bi bi-search feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Admin Panel</span><i class="bi bi-shield-lock feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Database</span><i class="bi bi-database feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-animate="right">
+            <div class="pricing-item slide-right">
+              <h3><i class="bi bi-rocket" aria-hidden="true"></i> Business Startup</h3>
+              <p class="description">Complete digital package for startups with website, branding, and initial SEO.</p>
+              <h4><sup>₹</sup>25,000<span> / package</span></h4>
+              <button class="cta-btn" onclick="openModal('Business Startup', '₹25,000')" aria-label="Get started with Business Startup package">Get Started</button>
+              <p class="text-center small">Setup within 12-15 days</p>
+              <ul>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 6-8 Pages</span><i class="bi bi-file-earmark-text feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Mobile Responsive</span><i class="bi bi-phone feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Basic SEO Setup</span><i class="bi bi-search feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Logo Design</span><i class="bi bi-palette feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Social Media Setup</span><i class="bi bi-share feature-icon" aria-hidden="true"></i></li>
+                <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Contact Form</span><i class="bi bi-envelope feature-icon" aria-hidden="true"></i></li>
+                <li class="na"><span><i class="bi bi-x-circle-fill" aria-hidden="true"></i> Advanced Features</span><i class="bi bi-gear feature-icon" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEO Monthly Maintenance -->
+        <div class="seo-maintenance" data-animate="up">
+          <h3 class="slide-up"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i> SEO Monthly Maintenance Plans</h3>
+          <p class="subtitle-text slide-up">Continuous growth with monthly SEO services after website delivery.</p>
+          <div class="row">
+            <div class="col-lg-4" data-animate="left">
+              <div class="seo-card slide-left">
+                <h5><i class="bi bi-stars" aria-hidden="true"></i> Basic SEO</h5>
+                <p>On-page optimization and Google Business profile management. Perfect for small businesses.</p>
+                <div class="seo-price">₹3,000 <span>/ month</span></div>
+                <ul class="mt-3" style="list-style: none; padding: 0;">
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> On-page SEO</span><i class="bi bi-file-code feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> Google Business</span><i class="bi bi-pin-map feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> Monthly Report</span><i class="bi bi-file-bar-graph feature-icon" aria-hidden="true"></i></li>
+                </ul>
+                <button class="cta-btn mt-3" onclick="openModal('Basic SEO', '₹3,000/month')" style="font-size: 12px; padding: 8px 20px;" aria-label="Get started with Basic SEO plan">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-animate="up">
+              <div class="seo-card slide-up" style="border: 2px solid #667eea;">
+                <h5><i class="bi bi-rocket-takeoff" aria-hidden="true"></i> Standard SEO</h5>
+                <p>Keyword targeting, regular blog posting, and quality backlinks. Recommended for faster growth.</p>
+                <div class="seo-price">₹7,500 <span>/ month</span></div>
+                <ul class="mt-3" style="list-style: none; padding: 0;">
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> All Basic features</span><i class="bi bi-check-all feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> 4 Blog Posts</span><i class="bi bi-newspaper feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> Backlink Building</span><i class="bi bi-link-45deg feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> Keyword Research</span><i class="bi bi-key feature-icon" aria-hidden="true"></i></li>
+                </ul>
+                <button class="cta-btn mt-3" onclick="openModal('Standard SEO', '₹7,500/month')" style="font-size: 12px; padding: 8px 20px;" aria-label="Get started with Standard SEO plan">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-animate="right">
+              <div class="seo-card slide-right">
+                <h5><i class="bi bi-trophy" aria-hidden="true"></i> Advanced SEO</h5>
+                <p>Complete content strategy with advanced analytics and ranking optimization for maximum results.</p>
+                <div class="seo-price">₹18,000 <span>/ month</span></div>
+                <ul class="mt-3" style="list-style: none; padding: 0;">
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> All Standard</span><i class="bi bi-star-fill feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> 8 Blog Posts</span><i class="bi bi-journals feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> Competitor Analysis</span><i class="bi bi-binoculars feature-icon" aria-hidden="true"></i></li>
+                  <li><span><i class="bi bi-check-circle-fill" style="color: #48bb78; margin-right: 8px;" aria-hidden="true"></i> Advanced Analytics</span><i class="bi bi-graph-up-arrow feature-icon" aria-hidden="true"></i></li>
+                </ul>
+                <button class="cta-btn mt-3" onclick="openModal('Advanced SEO', '₹18,000/month')" style="font-size: 12px; padding: 8px 20px;" aria-label="Get started with Advanced SEO plan">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-ons Section -->
+        <div class="addons-section" data-animate="up">
+          <h3 class="slide-up"><i class="bi bi-plus-circle" aria-hidden="true"></i> Additional Services (Optional)</h3>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-megaphone" aria-hidden="true"></i></div>
+                <h5>Google Ads Setup</h5>
+                <p>Professional Google Ads campaign setup and initial optimization.</p>
+                <div class="addon-price">₹1,500 - ₹2,500</div>
+                <button class="cta-btn mt-2" onclick="openModal('Google Ads Setup', '₹1,500 - ₹2,500')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Google Ads Setup">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-palette" aria-hidden="true"></i></div>
+                <h5>Logo Design</h5>
+                <p>Professional and unique logo design for your brand identity.</p>
+                <div class="addon-price">₹800 - ₹1,500</div>
+                <button class="cta-btn mt-2" onclick="openModal('Logo Design', '₹800 - ₹1,500')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Logo Design">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-share" aria-hidden="true"></i></div>
+                <h5>Social Media Setup</h5>
+                <p>Facebook, Instagram, LinkedIn pages setup and optimization.</p>
+                <div class="addon-price">₹1,500 - ₹3,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Social Media Setup', '₹1,500 - ₹3,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Social Media Setup">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-server" aria-hidden="true"></i></div>
+                <h5>Hosting & Domain</h5>
+                <p>Domain registration and reliable hosting setup with SSL.</p>
+                <div class="addon-price">₹1,000 - ₹2,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Hosting & Domain', '₹1,000 - ₹2,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Hosting & Domain">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+                <h5>Web Application</h5>
+                <p>Custom web application with dynamic features and API integration.</p>
+                <div class="addon-price">₹30,000 - ₹50,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Web Application', '₹30,000 - ₹50,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Web Application">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-phone" aria-hidden="true"></i></div>
+                <h5>Mobile App Development</h5>
+                <p>Native or hybrid mobile app for Android and iOS with basic features.</p>
+                <div class="addon-price">₹40,000 - ₹60,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Mobile App Development', '₹40,000 - ₹60,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Mobile App Development">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-cloud" aria-hidden="true"></i></div>
+                <h5>Cloud Hosting Setup</h5>
+                <p>Scalable cloud hosting setup with AWS, Azure, or Google Cloud.</p>
+                <div class="addon-price">₹5,000 - ₹10,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Cloud Hosting Setup', '₹5,000 - ₹10,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Cloud Hosting Setup">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-robot" aria-hidden="true"></i></div>
+                <h5>AI Chatbot Development</h5>
+                <p>AI-powered chatbot for website or app with basic automation.</p>
+                <div class="addon-price">₹15,000 - ₹25,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('AI Chatbot Development', '₹15,000 - ₹25,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with AI Chatbot Development">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-shield-lock" aria-hidden="true"></i></div>
+                <h5>Cybersecurity Audit</h5>
+                <p>Comprehensive website security audit and vulnerability assessment.</p>
+                <div class="addon-price">₹10,000 - ₹15,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Cybersecurity Audit', '₹10,000 - ₹15,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Cybersecurity Audit">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-bar-chart" aria-hidden="true"></i></div>
+                <h5>Analytics Integration</h5>
+                <p>Setup of Google Analytics and custom dashboards for insights.</p>
+                <div class="addon-price">₹2,000 - ₹5,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Analytics Integration', '₹2,000 - ₹5,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Analytics Integration">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-images" aria-hidden="true"></i></div>
+                <h5>Graphic Design</h5>
+                <p>Custom banners, infographics, and visuals for your website.</p>
+                <div class="addon-price">₹1,000 - ₹3,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Graphic Design', '₹1,000 - ₹3,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Graphic Design">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-camera-reels" aria-hidden="true"></i></div>
+                <h5>Video Content Creation</h5>
+                <p>Promotional or explainer videos for your website or social media.</p>
+                <div class="addon-price">₹5,000 - ₹10,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Video Content Creation', '₹5,000 - ₹10,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Video Content Creation">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="left">
+              <div class="addon-card slide-left">
+                <div class="addon-icon"><i class="bi bi-code" aria-hidden="true"></i></div>
+                <h5>Custom API Development</h5>
+                <p>Custom API for integrating third-party services or apps.</p>
+                <div class="addon-price">₹10,000 - ₹20,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Custom API Development', '₹10,000 - ₹20,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Custom API Development">Get Started</button>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-animate="right">
+              <div class="addon-card slide-right">
+                <div class="addon-icon"><i class="bi bi-speedometer" aria-hidden="true"></i></div>
+                <h5>Website Performance Optimization</h5>
+                <p>Optimize website speed and performance for better user experience.</p>
+                <div class="addon-price">₹5,000 - ₹8,000</div>
+                <button class="cta-btn mt-2" onclick="openModal('Website Performance Optimization', '₹5,000 - ₹8,000')" style="font-size: 12px; padding: 6px 15px;" aria-label="Get started with Website Performance Optimization">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- App + Website Combo -->
+        <div class="row mt-5" data-animate="up">
+          <div class="col-12">
+            <div class="pricing-item featured slide-up">
+              <h3><i class="bi bi-phone" aria-hidden="true"></i> App + Website Combo Package</h3>
+              <p class="description">Android app with API integration + professional website + complete SEO setup. Complete digital solution.</p>
+              <h4><sup>₹</sup>55,000<span> / package</span></h4>
+              <button class="cta-btn" onclick="openModal('App + Website Combo', '₹55,000')" aria-label="Get started with App + Website Combo package">Contact for Details</button>
+              <div class="row mt-4">
+                <div class="col-md-6">
+                  <ul>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Native Android App</span><i class="bi bi-android2 feature-icon" aria-hidden="true"></i></li>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Custom API</span><i class="bi bi-code-slash feature-icon" aria-hidden="true"></i></li>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Admin Dashboard</span><i class="bi bi-window-desktop feature-icon" aria-hidden="true"></i></li>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Professional Website</span><i class="bi bi-globe feature-icon" aria-hidden="true"></i></li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Complete SEO</span><i class="bi bi-search-heart feature-icon" aria-hidden="true"></i></li>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Play Store Publish</span><i class="bi bi-google-play feature-icon" aria-hidden="true"></i></li>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Push Notifications</span><i class="bi bi-app-indicator feature-icon" aria-hidden="true"></i></li>
+                    <li><span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 3 Months Support</span><i class="bi bi-headset feature-icon" aria-hidden="true"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" onclick="closeModal()" aria-label="Close modal">&times;</span>
+          <h5 id="modalTitle">Get Started</h5>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm" novalidate>
+            <div id="formAlert" class="alert"></div>
+            <div class="form-group">
+              <label for="packageName">Selected Package:</label>
+              <input type="text" id="packageName" name="packageName" readonly aria-describedby="packageNameDesc">
+              <small id="packageNameDesc" class="form-text text-muted">The package you selected.</small>
+            </div>
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="businessName">Business Name</label>
+              <input type="text" id="businessName" name="businessName">
+            </div>
+            <div class="form-group">
+              <label for="message">Requirements/Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn" aria-label="Send inquiry">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-4">
+              <span class="sitename">TechNova Solutions</span>
+            </a>
+            <p class="mb-4">Empowering businesses with innovative digital solutions. From websites to SEO, we help you grow online.</p>
+            <div class="newsletter-form">
+              <h5>Stay Updated</h5>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="input-group">
+                  <input type="email" name="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+                  <button type="submit" class="btn-subscribe" aria-label="Subscribe to newsletter">
+                    <i class="bi bi-send" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Thank you for subscribing!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> About</a></li>
+              <li><a href="careers.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Careers</a></li>
+              <li><a href="press.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Press</a></li>
+              <li><a href="Contact.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Digital Strategy</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Cloud Computing</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Data Analytics</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> AI Solutions</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Cybersecurity</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Get in Touch</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p>2847 Maple Avenue<br>Los Angeles, CA 90210<br>United States</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="tel:+919608328632">+91-9608328632</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="mailto:shiyaram644@gmail.com">shiyaram644@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+              <a href="#" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="px-1 sitename">TechNova Solutions</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JavaScript for Modal and Animations -->
+  <script>
+    // Modal Functions
+    function openModal(packageName, price) {
+      const modal = document.getElementById('contactModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const packageInput = document.getElementById('packageName');
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      modalTitle.textContent = `Get Started: ${packageName}`;
+      packageInput.value = `${packageName} (${price})`;
+      document.getElementById('contactForm').reset();
+      document.getElementById('formAlert').style.display = 'none';
+      document.getElementById('fullName').focus();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('contactModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.getElementById('formAlert').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('contactModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const form = this;
+      const alertBox = document.getElementById('formAlert');
+      const submitBtn = form.querySelector('.submit-btn');
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!fullName || !email) {
+        alertBox.className = 'alert alert-error';
+        alertBox.textContent = 'Please fill in all required fields.';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      alertBox.className = 'alert alert-success';
+      alertBox.textContent = 'Inquiry sent successfully! We will contact you soon.';
+      alertBox.style.display = 'block';
+
+      setTimeout(() => {
+        closeModal();
+        form.reset();
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Animation on Scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const animationType = entry.target.getAttribute('data-animate');
+            const targetElement = animationType === 'title' ? entry.target : entry.target.querySelector(`.slide-${animationType}`);
+            if (targetElement) {
+              targetElement.classList.add('animate');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      elements.forEach(element => observer.observe(element));
+    });
+  </script>
+</body>
+</html>

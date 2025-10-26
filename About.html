@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TechNova Solutions - About Us</title>
+  <meta name="description" content="Learn about TechNova Solutions, your trusted partner for affordable website development, SEO, and digital solutions in India.">
+  <meta name="keywords" content="TechNova Solutions, about us, website development, SEO services, digital solutions">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  < Zjednoczonych
+
+System: <style>
+    /* About Section */
+    .about {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      overflow: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .section-title.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title .subtitle {
+      color: #667eea;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      color: #2d3748;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #4a5568;
+      font-size: 14px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Animation Classes */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide-up {
+      opacity: 0;
+      transform: translateY(100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .animate {
+      opacity: 1 !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* About Content */
+    .about-content {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .about-content h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-content h3 i {
+      font-size: 30px;
+      color: #667eea;
+    }
+
+    .about-content p {
+      color: #4a5568;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Team Section */
+    .team-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 2px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      border-color: #667eea;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .team-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 5px;
+    }
+
+    .team-card p {
+      color: #718096;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .team-card .social-links a {
+      color: #667eea;
+      font-size: 16px;
+      margin: 0 5px;
+      transition: color 0.3s ease;
+    }
+
+    .team-card .social-links a:hover {
+      color: #764ba2;
+    }
+
+    /* Values Section */
+    .value-card {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      text-align: center;
+    }
+
+    .value-card:hover {
+      transform: translateX(8px);
+      border-color: #667eea;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    }
+
+    .value-card h5 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .value-card h5 i {
+      font-size: 20px;
+      color: #667eea;
+    }
+
+    .value-card p {
+      color: #4a5568;
+      font-size: 14px;
+    }
+
+    /* Contact Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 20px;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-header h5 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .modal-body {
+      padding: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #2d3748;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    .submit-btn:disabled {
+      background: #a0aec0;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
+    .alert {
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .about-content {
+        padding: 20px;
+      }
+
+      .team-card,
+      .value-card {
+        margin-bottom: 20px;
+      }
+
+      .modal-content {
+        width: 95%;
+        margin: 10% auto;
+      }
+
+      .slide-left, .slide-right, .slide-up {
+        transform: translateY(50px) scale(0.9);
+      }
+    }
+  </style>
+</head>
+
+<body class="about-page">
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl position-relative">
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="/techSolution-removebg-preview.png" class="logo d-flex align-items-center" >
+          <h1 class="sitename" ></h1>
+        </a>
+        <div class="d-flex align-items-center">
+          <div class="social-links">
+            <a href="#" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-wrap">
+        <div class="container d-flex justify-content-center position-relative">
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="service-details.html">Services</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="pricing.html">Project</a></li>
+              <li><a href="About.html" class="active">About</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle navigation"></i>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/bg/bg-2.webp);">
+      <div class="container position-relative">
+        <h1>About Us</h1>
+        <p>Discover TechNova Solutions, your trusted partner for innovative digital solutions in India.</p>
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">About</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-animate="title">
+        <span class="subtitle">About Us</span>
+        <h2>Who We Are</h2>
+        <p>Empowering businesses with cutting-edge digital solutions tailored to your needs.</p>
+      </div>
+
+      <div class="container">
+        <!-- Company Overview -->
+        <div class="about-content" data-animate="up">
+          <div class="slide-up">
+            <h3><i class="bi bi-globe" aria-hidden="true"></i> Our Story</h3>
+            <p>TechNova Solutions was founded with a vision to make professional digital solutions accessible to businesses of all sizes. Based in India, we specialize in website development, SEO, mobile apps, and digital marketing, delivering high-quality services at affordable prices. Our team combines creativity, technical expertise, and a passion for innovation to help our clients succeed online.</p>
+            <p>Since our inception, we've empowered startups, small businesses, and professionals like doctors and lawyers with custom websites, portfolios, and growth strategies. Our commitment to excellence and customer satisfaction drives everything we do.</p>
+            <button class="cta-btn" onclick="openModal('General Inquiry', 'Contact Us')" aria-label="Get in touch with us">Get in Touch</button>
+          </div>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="row gy-4" data-animate="up">
+          <div class="col-lg-6">
+            <div class="about-content slide-up">
+              <h3><i class="bi bi-rocket-takeoff" aria-hidden="true"></i> Our Mission</h3>
+              <p>To provide affordable, innovative, and reliable digital solutions that help businesses establish a strong online presence and achieve sustainable growth.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content slide-up">
+              <h3><i class="bi bi-eye" aria-hidden="true"></i> Our Vision</h3>
+              <p>To be the leading digital solutions provider in India, empowering businesses worldwide with cutting-edge technology and exceptional service.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Team -->
+        <div class="section-title mt-5" data-animate="title">
+          <span class="subtitle">Our Team</span>
+          <h2>Meet Our Experts</h2>
+          <p>Our dedicated team of professionals brings your digital vision to life.</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6" data-animate="left">
+            <div class="team-card slide-left">
+              <img src="assets/img/team/team-1.jpg" alt="Team Member 1" />
+              <h4>John Doe</h4>
+              <p>Lead Developer</p>
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-animate="left">
+            <div class="team-card slide-left">
+              <img src="assets/img/team/team-2.jpg" alt="Team Member 2" />
+              <h4>Jane Smith</h4>
+              <p>SEO Specialist</p>
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-animate="right">
+            <div class="team-card slide-right">
+              <img src="assets/img/team/team-3.jpg" alt="Team Member 3" />
+              <h4>Michael Lee</h4>
+              <p>UI/UX Designer</p>
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-animate="right">
+            <div class="team-card slide-right">
+              <img src="assets/img/team/team-4.jpg" alt="Team Member 4" />
+              <h4>Sarah Brown</h4>
+              <p>Project Manager</p>
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Values -->
+        <div class="section-title mt-5" data-animate="title">
+          <span class="subtitle">Our Values</span>
+          <h2>What We Stand For</h2>
+          <p>Our core values guide us in delivering exceptional solutions to our clients.</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4" data-animate="left">
+            <div class="value-card slide-left">
+              <h5><i class="bi bi-star-fill" aria-hidden="true"></i> Quality</h5>
+              <p>We deliver high-quality solutions that meet industry standards and exceed client expectations.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-animate="up">
+            <div class="value-card slide-up">
+              <h5><i class="bi bi-lightbulb-fill" aria-hidden="true"></i> Innovation</h5>
+              <p>We embrace the latest technologies to create cutting-edge digital experiences.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-animate="right">
+            <div class="value-card slide-right">
+              <h5><i class="bi bi-heart-fill" aria-hidden="true"></i> Customer Focus</h5>
+              <p>Your success is our priority, and we tailor solutions to meet your unique needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" onclick="closeModal()" aria-label="Close modal">&times;</span>
+          <h5 id="modalTitle">Get in Touch</h5>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm" novalidate>
+            <div id="formAlert" class="alert"></div>
+            <div class="form-group">
+              <label for="inquiryType">Inquiry Type:</label>
+              <input type="text" id="inquiryType" name="inquiryType" readonly aria-describedby="inquiryTypeDesc">
+              <small id="inquiryTypeDesc" class="form-text text-muted">The type of inquiry you are making.</small>
+            </div>
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="businessName">Business Name</label>
+              <input type="text" id="businessName" name="businessName">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn" aria-label="Send inquiry">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-4">
+              <span class="sitename">TechNova Solutions</span>
+            </a>
+            <p class="mb-4">Empowering businesses with innovative digital solutions. From websites to SEO, we help you grow online.</p>
+            <div class="newsletter-form">
+              <h5>Stay Updated</h5>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="input-group">
+                  <input type="email" name="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+                  <button type="submit" class="btn-subscribe" aria-label="Subscribe to newsletter">
+                    <i class="bi bi-send" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Thank you for subscribing!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="About.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> About</a></li>
+              <li><a href="careers.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Careers</a></li>
+              <li><a href="press.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Press</a></li>
+              <li><a href="Contact.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Digital Strategy</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Cloud Computing</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Data Analytics</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> AI Solutions</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Cybersecurity</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Get in Touch</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p>201301, Noida sector 66, Metro 59<br>gali no 9 Sai nath,Building Ground Floor<br> Uttar Pradesh</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="tel:+919608328632">+91-9608328632</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="mailto:shiyaram644@gmail.com">shiyaram644@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+              <a href="#" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="px-1 sitename">TechNova Solutions</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JavaScript for Modal and Animations -->
+  <script>
+    // Modal Functions
+    function openModal(inquiryType, label) {
+      const modal = document.getElementById('contactModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const inquiryInput = document.getElementById('inquiryType');
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      modalTitle.textContent = `Get in Touch: ${inquiryType}`;
+      inquiryInput.value = inquiryType;
+      document.getElementById('contactForm').reset();
+      document.getElementById('formAlert').style.display = 'none';
+      document.getElementById('fullName').focus();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('contactModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.getElementById('formAlert').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('contactModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const form = this;
+      const alertBox = document.getElementById('formAlert');
+      const submitBtn = form.querySelector('.submit-btn');
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!fullName || !email) {
+        alertBox.className = 'alert alert-error';
+        alertBox.textContent = 'Please fill in all required fields.';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      alertBox.className = 'alert alert-success';
+      alertBox.textContent = 'Inquiry sent successfully! We will contact you soon.';
+      alertBox.style.display = 'block';
+
+      setTimeout(() => {
+        closeModal();
+        form.reset();
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Animation on Scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const animationType = entry.target.getAttribute('data-animate');
+            const targetElement = animationType === 'title' ? entry.target : entry.target.querySelector(`.slide-${animationType}`);
+            if (targetElement) {
+              targetElement.classList.add('animate');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      elements.forEach(element => observer.observe(element));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TechNova Solutions - Contact Us</title>
+  <meta name="description" content="Get in touch with TechNova Solutions for website development, SEO, and digital solutions. Reach us via email, phone, or our contact form.">
+  <meta name="keywords" content="TechNova Solutions, contact us, website development, SEO services, digital solutions">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Contact Section */
+    .contact {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      overflow: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .section-title.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title .subtitle {
+      color: #667eea;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      color: #2d3748;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      min-height: 40px; /* Ensure space for typed text */
+    }
+
+    .section-title p {
+      color: #4a5568;
+      font-size: 14px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Typing Animation */
+    .typed-text {
+      font-size: 24px;
+      color: #2d3748;
+      font-weight: 700;
+      min-height: 30px;
+      display: inline-block;
+    }
+
+    .typed-text span {
+      border-right: 2px solid #667eea;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Animation Classes */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide-up {
+      opacity: 0;
+      transform: translateY(100px) scale(0.9);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .animate {
+      opacity: 1 !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* Contact Content */
+    .contact-content {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .contact-content h3 {
+      color: #2d3748;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      min-height: 30px;
+    }
+
+    .contact-image {
+      background-image: url('assets/img/contact-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      height: 300px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-image-overlay {
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-image-overlay h3 {
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+    }
+
+    .contact-info {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .contact-info:hover {
+      transform: translateX(8px);
+      border-color: #667eea;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    }
+
+    .contact-info h5 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-info h5 i {
+      font-size: 20px;
+      color: #667eea;
+    }
+
+    .contact-info p {
+      color: #4a5568;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .contact-info a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Map Section */
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      height: 300px;
+    }
+
+    /* Contact Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 20px;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-header h5 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .modal-body {
+      padding: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #2d3748;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    .submit-btn:disabled {
+      background: #a0aec0;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
+    .alert {
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* Social Links */
+    .social-links a {
+      margin-right: 15px;
+      font-size: 16px;
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .contact-content {
+        padding: 20px;
+      }
+
+      .contact-content h3 {
+        font-size: 20px;
+      }
+
+      .contact-info {
+        margin-bottom: 20px;
+      }
+
+      .contact-image {
+        height: 200px;
+      }
+
+      .modal-content {
+        width: 95%;
+        margin: 10% auto;
+      }
+
+      .slide-left, .slide-right, .slide-up {
+        transform: translateY(50px) scale(0.9);
+      }
+
+      .typed-text {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl position-relative">
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+        <img src="./techSolution-removebg-preview.png" alt="TechNova Solutions Logo">
+          <h1 class="sitename"></h1>
+        </a>
+        <div class="d-flex align-items-center">
+          <div class="social-links">
+            <a href="https://facebook.com/technovasolution" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/technovasolution" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/company/technovasolution" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-wrap">
+        <div class="container d-flex justify-content-center position-relative">
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="service-details.html">Services</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="pricing.html">Project</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="Contact.html" class="active">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle navigation"></i>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/bg/bg-2.webp);">
+      <div class="container position-relative">
+        <h1>Contact Us</h1>
+        <p>We're here to help you grow your business online. Get in touch today!</p>
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-animate="title">
+        <span class="subtitle">Contact Us</span>
+        <h2 id="main-heading" class="typed-text">Contact Us</h2>
+        <p>We're excited to connect with you! At TechNova Solutions, we believe great communication is the first step toward building great digital products. Whether you’re looking to create a new website, develop a mobile app, improve your SEO, or discuss a custom software project, our expert team is here to help you every step of the way.</p>
+      </div>
+
+      <div class="container">
+        <!-- Contact Image -->
+        <div class="contact-image slide-up" data-animate="up">
+          <div class="contact-image-overlay">
+            <h3>Ready to Transform Your Digital Presence?</h3>
+          </div>
+        </div>
+
+        <!-- Contact Info and Form -->
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <!-- Build Something Amazing -->
+            <div class="contact-content slide-left" data-animate="left">
+              <h3 id="build-heading" class="typed-text">Let’s Build Something Amazing Together</h3>
+              <p>We understand that every project is unique, and we take the time to listen carefully to your goals and challenges. Once we understand your vision, we design a personalized plan to deliver the best possible digital solution for your business.</p>
+              <p>Our friendly team is always ready to answer your questions, provide a free consultation, or give you a quote for your project. Just reach out — and we’ll take care of the rest.</p>
+              <button class="cta-btn" onclick="openModal('General Inquiry', 'Contact Us')" aria-label="Open contact form">Contact Now</button>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-info slide-left" data-animate="left">
+              <h5><i class="bi bi-geo-alt" aria-hidden="true"></i> Our Office</h5>
+              <p>Office No. 12, 2nd Floor, New Tech Plaza<br>Dwarka, New Delhi – 110075<br>India</p>
+            </div>
+            <div class="contact-info slide-left" data-animate="left">
+              <h5><i class="bi bi-telephone" aria-hidden="true"></i> Phone / WhatsApp</h5>
+              <p><a href="tel:+919876543210">+91-9876543210</a></p>
+            </div>
+            <div class="contact-info slide-left" data-animate="left">
+              <h5><i class="bi bi-envelope" aria-hidden="true"></i> Email</h5>
+              <p>
+                <a href="mailto:info@technovasolution.com">info@technovasolution.com</a><br>
+                <a href="mailto:support@technovasolution.com">support@technovasolution.com</a>
+              </p>
+            </div>
+            <div class="contact-info slide-left" data-animate="left">
+              <h5><i class="bi bi-globe" aria-hidden="true"></i> Website</h5>
+              <p><a href="https://www.technovasolution.com">www.technovasolution.com</a></p>
+            </div>
+            <div class="contact-info slide-left" data-animate="left">
+              <h5><i class="bi bi-clock" aria-hidden="true"></i> Business Hours</h5>
+              <p>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+
+          <!-- Map and Why Choose Us -->
+          <div class="col-lg-6">
+            <div class="map-container slide-right" data-animate="right">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.845678912345!2d77.05512331508224!3d28.605923982426566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1c7f8b7b8f3b%3A0x2c8b8f7e7b7f7f7f!2sDwarka%2C%20New%20Delhi%2C%20Delhi%20110075%2C%20India!5e0!3m2!1sen!2sin!4v1666723456789!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="contact-content slide-right" data-animate="right" style="margin-top: 20px;">
+              <h3 id="why-heading" class="typed-text">Why Contact TechNova Solution?</h3>
+              <p>When you reach out to us, you’re not just contacting a company — you’re connecting with a dedicated technology partner who cares about your business success. Here’s what you can expect:</p>
+              <ul>
+                <li>Quick and clear communication</li>
+                <li>Transparent pricing and honest advice</li>
+                <li>Free consultation or project discussion</li>
+                <li>End-to-end technical guidance</li>
+                <li>Long-term support and maintenance</li>
+              </ul>
+              <p>We’ve helped dozens of businesses build their digital presence — now it’s your turn. Let’s turn your ideas into reality with TechNova Solutions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stay Connected -->
+        <div class="contact-content slide-up" data-animate="up" style="margin-top: 40px;">
+          <h3 id="stay-heading" class="typed-text">Stay Connected</h3>
+          <p>Follow us on social media to stay updated on our latest projects, tech tips, and offers:</p>
+          <div class="social-links d-flex gap-3">
+            <a href="https://facebook.com/technovasolution" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="https://instagram.com/technovasolution" aria-label="Instagram"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="https://linkedin.com/company/technovasolution" aria-label="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" onclick="closeModal()" aria-label="Close modal">&times;</span>
+        <h5 id="modalTitle">Get in Touch</h5>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm" novalidate>
+          <div id="formAlert" class="alert"></div>
+          <div class="form-group">
+            <label for="inquiryType">Inquiry Type:</label>
+            <input type="text" id="inquiryType" name="inquiryType" readonly aria-describedby="inquiryTypeDesc">
+            <small id="inquiryTypeDesc" class="form-text text-muted">The type of inquiry you are making.</small>
+          </div>
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="businessName">Company Name (Optional)</label>
+            <input type="text" id="businessName" name="businessName">
+          </div>
+          <div class="form-group">
+            <label for="serviceType">Service You’re Interested In</label>
+            <select id="serviceType" name="serviceType">
+              <option value="Website">Website</option>
+              <option value="App">Mobile App</option>
+              <option value="SEO">SEO</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message / Project Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn" aria-label="Send inquiry">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-4">
+              <span class="sitename">TechNova Solutions</span>
+            </a>
+            <p class="mb-4">Empowering businesses with innovative digital solutions. From websites to SEO, we help you grow online.</p>
+            <div class="newsletter-form">
+              <h5>Stay Updated</h5>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="input-group">
+                  <input type="email" name="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+                  <button type="submit" class="btn-subscribe" aria-label="Subscribe to newsletter">
+                    <i class="bi bi-send" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Thank you for subscribing!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="About.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> About</a></li>
+              <li><a href="careers.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Careers</a></li>
+              <li><a href="press.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Press</a></li>
+              <li><a href="Contact.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Digital Strategy</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Cloud Computing</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Data Analytics</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> AI Solutions</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> Cybersecurity</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Get in Touch</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p>Office No. 12, 2nd Floor, New Tech Plaza<br>Dwarka, New Delhi – 110075<br>India</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="tel:+919876543210">+91-9876543210</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info">
+                <p>
+                  <a href="mailto:info@technovasolution.com">info@technovasolution.com</a><br>
+                  <a href="mailto:support@technovasolution.com">support@technovasolution.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://facebook.com/technovasolution" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="https://instagram.com/technovasolution" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+              <a href="https://linkedin.com/company/technovasolution" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="px-1 sitename">TechNova Solutions</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Typed.js for Typing Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Custom JavaScript for Modal, Animations, and Typing -->
+  <script>
+    // Typing Animations
+    document.addEventListener('DOMContentLoaded', () => {
+      // Main Contact Us Heading
+      new Typed('#main-heading', {
+        strings: [
+          'Contact Us',
+          'We’re Excited to Connect with You!',
+          'Let’s Start Your Digital Journey'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        onComplete: (self) => {
+          if (!self.strings.includes(self.el.innerText)) {
+            self.el.innerText = self.strings[0]; // Fallback to first string
+          }
+        }
+      });
+
+      // Let’s Build Something Amazing
+      new Typed('#build-heading', {
+        strings: [
+          'Let’s Build Something Amazing Together',
+          'Create Stunning Websites with Us',
+          'Boost Your Business with Our Solutions'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        onComplete: (self) => {
+          if (!self.strings.includes(self.el.innerText)) {
+            self.el.innerText = self.strings[0];
+          }
+        }
+      });
+
+      // Why Choose TechNova
+      new Typed('#why-heading', {
+        strings: [
+          'Why Contact TechNova Solution?',
+          'Your Trusted Technology Partner',
+          'Transform Your Business with Us'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        onComplete: (self) => {
+          if (!self.strings.includes(self.el.innerText)) {
+            self.el.innerText = self.strings[0];
+          }
+        }
+      });
+
+      // Stay Connected
+      new Typed('#stay-heading', {
+        strings: [
+          'Stay Connected',
+          'Follow Our Latest Updates',
+          'Join Our Tech Community'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        onComplete: (self) => {
+          if (!self.strings.includes(self.el.innerText)) {
+            self.el.innerText = self.strings[0];
+          }
+        }
+      });
+    });
+
+    // Modal Functions
+    function openModal(inquiryType, label) {
+      const modal = document.getElementById('contactModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const inquiryInput = document.getElementById('inquiryType');
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      modalTitle.textContent = `Get in Touch: ${inquiryType}`;
+      inquiryInput.value = inquiryType;
+      document.getElementById('contactForm').reset();
+      document.getElementById('formAlert').style.display = 'none';
+      document.getElementById('fullName').focus();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('contactModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.getElementById('formAlert').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('contactModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const form = this;
+      const alertBox = document.getElementById('formAlert');
+      const submitBtn = form.querySelector('.submit-btn');
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!fullName || !email) {
+        alertBox.className = 'alert alert-error';
+        alertBox.textContent = 'Please fill in all required fields.';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      alertBox.className = 'alert alert-success';
+      alertBox.textContent = 'Inquiry sent successfully! We will contact you soon.';
+      alertBox.style.display = 'block';
+
+      setTimeout(() => {
+        closeModal();
+        form.reset();
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Animation on Scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const animationType = entry.target.getAttribute('data-animate');
+            const targetElement = animationType === 'title' ? entry.target : entry.target.querySelector(`.slide-${animationType}`);
+            if (targetElement) {
+              targetElement.classList.add('animate');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      elements.forEach(element => observer.observe(element));
+    });
+  </script>
+</body>
+</html>
